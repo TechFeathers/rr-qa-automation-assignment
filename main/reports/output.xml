@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.11.0 on win32)" generated="2026-06-20T19:18:21.592087" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="H:\My Drive\01_Family_Members_Details\04_Abdul_Documents\13_Abdul_KnowledgeZone\Programming_Works\03_Python\Python_Pgms\01_Company\RapyutaRobotics\rr-qa-automation-assignment\main\tests">
+<suite id="s1-s1" name="Ui" source="H:\My Drive\01_Family_Members_Details\04_Abdul_Documents\13_Abdul_KnowledgeZone\Programming_Works\03_Python\Python_Pgms\01_Company\RapyutaRobotics\rr-qa-automation-assignment\main\tests\ui">
+<suite id="s1-s1-s1" name="App launch tests" source="H:\My Drive\01_Family_Members_Details\04_Abdul_Documents\13_Abdul_KnowledgeZone\Programming_Works\03_Python\Python_Pgms\01_Company\RapyutaRobotics\rr-qa-automation-assignment\main\tests\ui\App_launch_tests.robot">
+<kw name="Launch Application" owner="ui_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-20T19:18:21.792868" level="INFO">Opening browser 'chrome' to base url 'https://tmdb-discover.surge.sh/'.</msg>
+<arg>${UI_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-20T19:18:21.792868" elapsed="3.453637"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.246505" elapsed="0.028046"/>
+</kw>
+<status status="PASS" start="2026-06-20T19:18:21.791873" elapsed="3.483678"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TC_UI_POSITIVE_01:Verify Application Loads Successfully with page title, home page navigation" line="8">
+<kw name="Verify Home Page Loaded" owner="ui_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${SEARCH_BOX}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.276551" elapsed="0.010407"/>
+</kw>
+<status status="PASS" start="2026-06-20T19:18:25.275551" elapsed="0.011407"/>
+</kw>
+<kw name="Verify Page Title" owner="ui_keywords">
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2026-06-20T19:18:25.293966" level="INFO">${title} = Discover</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.286958" elapsed="0.007008"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${PAGE_TITLE_TEXT}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.294968" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-20T19:18:25.286958" elapsed="0.008010"/>
+</kw>
+<kw name="Goto Filter" owner="ui_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navigating to filter: ${filter_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.295966" elapsed="0.000000"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2026-06-20T19:18:25.296965" level="INFO">${filter_locator} = //a[text()='Trend']</msg>
+<var>${filter_locator}</var>
+<arg>${FILTER_BUTTON}</arg>
+<arg>&lt;FILTER-NAME&gt;</arg>
+<arg>${filter_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.296965" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-20T19:18:25.296965" level="INFO">Clicking element '//a[text()='Trend']'.</msg>
+<arg>${filter_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.296965" elapsed="0.058086"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-20T19:18:27.356008" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-20T19:18:25.355051" elapsed="2.000957"/>
+</kw>
+<arg>${FILTER_TREND_TEXT}</arg>
+<status status="PASS" start="2026-06-20T19:18:25.295966" elapsed="2.060042"/>
+</kw>
+<kw name="Goto TMDB Home Page By Page Title" owner="ui_keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Navigating to TMDB home page using Page Title</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-20T19:18:27.357221" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-20T19:18:27.357221" level="INFO">Clicking element '//p[text()='Discover']'.</msg>
+<arg>${PAGE_TITLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-20T19:18:27.357221" elapsed="0.044087"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-20T19:18:29.402190" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-20T19:18:27.401308" elapsed="2.000882"/>
+</kw>
+<status status="PASS" start="2026-06-20T19:18:27.357221" elapsed="2.044969"/>
+</kw>
+<doc>Verify application launches successfully</doc>
+<tag>ak_test</tag>
+<tag>Launch</tag>
+<tag>P0</tag>
+<tag>Positive</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2026-06-20T19:18:25.275551" elapsed="4.127120"/>
+</test>
+<kw name="Close Application" owner="ui_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-20T19:18:29.403681" elapsed="2.093599"/>
+</kw>
+<status status="PASS" start="2026-06-20T19:18:29.403681" elapsed="2.093599"/>
+</kw>
+<status status="PASS" start="2026-06-20T19:18:21.614134" elapsed="9.883146"/>
+</suite>
+<status status="PASS" start="2026-06-20T19:18:21.612866" elapsed="9.885413"/>
+</suite>
+<status status="PASS" start="2026-06-20T19:18:21.594335" elapsed="9.904939"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">ak_test</stat>
+<stat pass="1" fail="0" skip="0">Launch</stat>
+<stat pass="1" fail="0" skip="0">P0</stat>
+<stat pass="1" fail="0" skip="0">Positive</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Ui" id="s1-s1" pass="1" fail="0" skip="0">Tests.Ui</stat>
+<stat name="App launch tests" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Ui.App launch tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-20T19:18:21.622445" level="ERROR">Error in file 'H:\My Drive\01_Family_Members_Details\04_Abdul_Documents\13_Abdul_KnowledgeZone\Programming_Works\03_Python\Python_Pgms\01_Company\RapyutaRobotics\rr-qa-automation-assignment\main\resources\keywords\ui_keywords.resource' on line 297: Creating keyword 'Verify Default Movie List Displayed' failed: Keyword with same name defined multiple times.</msg>
+</errors>
+</robot>
