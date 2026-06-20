@@ -1,37 +1,39 @@
 *** Variables ***
-# Browser
-${BROWSER}                chrome
-${HEADLESS}               False
 
-# URLs
-${UI_URL}                 https://tmdb-discover.surge.sh/
-#${UI_URL}                 https://www.google.com/
-${API_BASE_URL}           https://api.themoviedb.org/3
+${PAGE_TITLE}                 //p[normalize-space()='Discover']
 
-# TMDB API Key
-${API_KEY}                <YOUR_TMDB_API_KEY>
+# Menu(s)
+${MENU_BUTTON}              //a[text()='<MENU-NAME>']
 
-# Timeouts
-${IMPLICIT_WAIT}          5s
-${EXPLICIT_WAIT}          10s
-
-# PAGE RELATED LOCATORS
-${PAGE_TITLE_TEXT}                 Discover
-${FILTER_POPULAR_TEXT}             Popular
-${FILTER_TREND_TEXT}             Trend
-${FILTER_NEWEST_TEXT}             Newest
-${FILTER_TOP_RATED_TEXT}             Top rated
-${GENRE_ACTION_TEXT}             Action
-${GENRE_COMEDY_TEXT}             Comedy
-${GENRE_THRILLER_TEXT}             Thriller
-
-${PAGE_TITLE}                 //p[text()='Discover']
+# Search box
 ${SEARCH_BOX}                 //input[@name='search']
 ${SEARCH_BUTTON}              xpath=//button[contains(.,'Search')]
-${MOVIE_CARD}                 css=.movie-card
-${MOVIE_TITLE}                css=.movie-title
-${NEXT_PAGE_BUTTON}           xpath=//button[contains(.,'Next')]
-${PREVIOUS_PAGE_BUTTON}       xpath=//button[contains(.,'Previous')]
-${GENRE_DROPDOWN}             //p[text()='Genre']/following::div[contains(@class,'css-tlfecz-indicatorContainer')][1]
-${SELECT_GENRE}               xpath=//*[text()='<GENRE-NAME>']
-${FILTER_BUTTON}              //a[text()='<FILTER-NAME>']
+
+# Discover Options Panel locators
+${DISCOVER_OPTIONS_LABEL}           //div//p[normalize-space()='DISCOVER OPTIONS']
+
+# Type
+${CONTENT_TYPE_LABEL}            //p[normalize-space()='Type']
+${CONTENT_TYPE_DROPDOWN}            //p[normalize-space()='Type']/following::div[contains(@class,'css-1uccc91-singleValue')][1]
+${CONTENT_TYPE_DEFAULT_VALUE}             //p[text()='Type']/following::div[contains(@class,'css-1uccc91-singleValue')][1][normalize-space()='Movie']
+${SELECT_CONTENT_TYPE}             //div[contains(@class,'css-yt9ioa-option') and normalize-space()='<CONTENT-TYPE>']
+
+# Genre
+${CONTENT_GENRE_LABEL}            //p[normalize-space()='Genre']
+${CONTENT_GENRE_DROPDOWN}             //p[normalize-space()='Genre']/following::div[contains(@class,'css-tlfecz-indicatorContainer')][1]
+${CONTENT_GENRE_DEFAULT_VALUE}             //p[text()='Genre']/following::div[contains(@class,'css-1wa3eu0-placeholder')][1][normalize-space()='Select...']
+${SELECT_CONTENT_GENRE}             //div[contains(@class,'css-yt9ioa-option') and normalize-space()='<CONTENT-TYPE>']
+
+# Start Year
+${YEAR_LABEL}            //p[normalize-space()='Year']
+${START_YEAR_DROPDOWN}    //p[normalize-space()='Year']/following::div[contains(@class,'css-1uccc91-singleValue')][1]
+${START_YEAR_DEFAULT_VALUE}    //p[text()='Year']/following::div[contains(@class,'css-1uccc91-singleValue')][1][normalize-space()='1900']
+${SELECT_START_YEAR}             //div[contains(@class,'css-yt9ioa-option') and normalize-space()='<START-YEAR>']
+
+# End Year
+${END_YEAR_DROPDOWN}    //p[normalize-space()='Year']/following::div[contains(@class,'css-1uccc91-singleValue')][2]
+${END_YEAR_DEFAULT_VALUE}    //p[text()='Year']/following::div[contains(@class,'css-1uccc91-singleValue')][2][normalize-space()='2025']
+${SELECT_END_YEAR}             //div[contains(@class,'css-yt9ioa-option') and normalize-space()='<END-YEAR>']
+
+
+
