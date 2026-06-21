@@ -5,10 +5,10 @@ ${HEADLESS}               False
 
 # URLs
 ${UI_URL}                 https://tmdb-discover.surge.sh/
-${API_BASE_URL}           https://api.themoviedb.org/3
+${API_BASE_URL}           https://tmdb-discover.surge.sh/
 
 # TMDB API Key
-${API_KEY}                <YOUR_TMDB_API_KEY>
+${API_KEY}                <TMDB_API_KEY>
 
 # Timeouts
 ${IMPLICIT_WAIT}          5s
