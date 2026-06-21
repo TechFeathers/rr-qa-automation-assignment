@@ -18,6 +18,7 @@ TC_UI_POSITIVE_04:Search Partial Movie
     [Teardown]    Clear Search Field
 
 TC_UI_POSITIVE_05:Search Lowercase Movie
+    [Tags]    P1    Search    Positive
     Search Movie    ${LOWERCASE_MOVIE_NAME}
     Verify Search Results Displayed
     [Teardown]    Clear Search Field
