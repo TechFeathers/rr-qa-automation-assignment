@@ -35,7 +35,7 @@ TC_UI_POSITIVE_13:Select Movies Between Years
     Verify All Movies Displayed
     [Teardown]    Goto TMDB Home Page By Page Title
 
-TC_UI_POSITIVE_14:Select Movies With Minimum Rating
+TC_UI_POSITIVE_14:Select Movies With Star Rating
     [Tags]    P1    Genre    Positive    ak_test
     Select Star Ratings    4
     Sleep    7s
