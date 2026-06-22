@@ -8,7 +8,7 @@ ${UI_URL}                 https://tmdb-discover.surge.sh/
 ${API_BASE_URL}           https://tmdb-discover.surge.sh/
 
 # TMDB API Key
-${API_KEY}                <TMDB_API_KEY>
+${API_KEY}                add494e96808c55b3ee7f940c9d5e5b6
 
 # Timeouts
 ${IMPLICIT_WAIT}          5s
